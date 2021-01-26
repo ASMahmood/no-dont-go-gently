@@ -1,43 +1,19 @@
 import React from "react";
-import { AiFillLinkedin } from "react-icons/ai";
-import { AiFillHome } from "react-icons/ai";
+import "./styles/Navbar.css";
+import { Container, Dropdown, Button } from "react-bootstrap";
+import { withRouter, NavLink, Link } from "react-router-dom";
+import WorkAlert from "./WorkAlert";
+import abdul from "../components/abdul.jpeg";
+
+import { AiFillLinkedin, AiFillHome, AiFillMessage } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { IoBagRemove } from "react-icons/io5";
-import { AiFillMessage } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
 import { GrSchedulePlay } from "react-icons/gr";
-import abdul from "../components/abdul.jpeg";
-import "./styles/Navbar.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import WorkAlert from "./WorkAlert";
-import { Container, Dropdown, Button } from "react-bootstrap";
-
-import { withRouter, NavLink, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   state = {
     user: "",
-  };
-
-  componentDidMount = () => {
-    this.fetchProfile();
-  };
-
-  fetchProfile = async () => {
-    try {
-      const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-      const parsedResponse = await response.json();
-      this.setState({ user: parsedResponse });
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   render() {
@@ -50,8 +26,8 @@ class Navbar extends React.Component {
             </Link>
 
             <div className="search-input">
-              {/*<AiOutlineSearch />
-               <input type="text" placeholder="search" />*/}
+              <AiOutlineSearch />
+              <input type="text" placeholder="search" />
             </div>
           </div>
 

@@ -1,6 +1,5 @@
-import { Row, Col, Container } from "react-bootstrap";
 import React from "react";
-
+import { Row, Col, Container } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillQuestionCircle, AiOutlineSetting } from "react-icons/ai";
 

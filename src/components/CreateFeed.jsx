@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import "../styles/CreateFeed.css";
-import StartPost from "./StartPost";
 import { CgFeed } from "react-icons/cg";
 import {
   AiFillPicture,
@@ -14,7 +13,6 @@ class CreateFeed extends React.Component {
     return (
       <div className="create-feed">
         <Container className="feed-wrapper">
-          <StartPost fetchPosts={this.props.fetchPosts} />
           <div className="feed-icons-wrapper mt-3">
             <div className="pic-icon d-flex text-center">
               <AiFillPicture />

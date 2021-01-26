@@ -9,6 +9,8 @@ class FeedPage extends React.Component {
     postArray: [],
   };
 
+  fetchPosts = () => {};
+
   render() {
     return (
       <Container style={{ marginTop: "2rem" }}>
@@ -17,10 +19,9 @@ class FeedPage extends React.Component {
             <HomeProfile />
           </Col>
           <Col md={6} id="feedMiddleColumn">
-            <Row
-              id="posterBit"
-              style={{ width: "112%", marginLeft: "-5%" }}
-            ></Row>
+            <Row id="posterBit" style={{ width: "112%", marginLeft: "-5%" }}>
+              <CreateFeed fetchPosts={this.fetchPosts} />
+            </Row>
 
             <Row className="d-flex justify-content-center"></Row>
           </Col>

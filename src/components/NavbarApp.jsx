@@ -5,7 +5,12 @@ import { withRouter, NavLink, Link } from "react-router-dom";
 import WorkAlert from "./WorkAlert";
 import abdul from "../components/abdul.jpeg";
 
-import { AiFillLinkedin, AiFillHome, AiFillMessage } from "react-icons/ai";
+import {
+  AiFillLinkedin,
+  AiFillHome,
+  AiFillMessage,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { IoBagRemove } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";

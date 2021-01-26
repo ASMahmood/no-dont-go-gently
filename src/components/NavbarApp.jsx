@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Navbar.css";
+import "../styles/Navbar.css";
 import { Container, Dropdown, Button } from "react-bootstrap";
 import { withRouter, NavLink, Link } from "react-router-dom";
 import abdul from "../components/abdul.jpeg";

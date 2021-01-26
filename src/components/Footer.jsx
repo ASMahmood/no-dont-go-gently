@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Footer.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillQuestionCircle, AiOutlineSetting } from "react-icons/ai";

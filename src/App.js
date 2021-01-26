@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
 import NavbarApp from "./components/NavbarApp";
+import FeedPage from "./components/FeedPage";
 
 class App extends React.Component {
   state = {
@@ -14,6 +15,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <NavbarApp />
+        <Route path="/" exact component={FeedPage} />
         <Footer />
       </BrowserRouter>
     );

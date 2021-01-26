@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import HomeProfile from "./HomeProfile";
+import HomeRight from "./HomeRight";
 import "../styles/FeedPage.css";
 
 class FeedPage extends React.Component {
@@ -12,7 +13,9 @@ class FeedPage extends React.Component {
     return (
       <Container style={{ marginTop: "2rem" }}>
         <Row id="hopesAndDreams">
-          <Col md={2}></Col>
+          <Col md={2}>
+            <HomeProfile />
+          </Col>
           <Col md={6} id="feedMiddleColumn">
             <Row
               id="posterBit"
@@ -21,7 +24,9 @@ class FeedPage extends React.Component {
 
             <Row className="d-flex justify-content-center"></Row>
           </Col>
-          <Col md={3} id="feedRightColumn"></Col>
+          <Col md={3} id="feedRightColumn">
+            <HomeRight />
+          </Col>
         </Row>
         <hr />
       </Container>

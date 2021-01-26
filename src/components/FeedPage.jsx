@@ -4,42 +4,36 @@ import CreateFeed from "./CreateFeed";
 import HomeProfile from "./HomeProfile";
 import HomeRight from "./HomeRight";
 import PostsColumn from "./PostsColumn";
-import SavedPosts from "./SavedPosts";
+
 import "./styles/FeedPage.css";
 
 class FeedPage extends React.Component {
   state = {
     postArray: [],
-   
   };
 
   componentDidMount = () => {
     this.fetchPosts();
-   // this.fetchProfiles();
+    // this.fetchProfiles();
   };
 
   fetchPosts = async () => {
     this.setState({ loading: true });
     try {
-      let response = await fetch(
-        "https://buildweek-3.herokuapp.com/post",
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
+      let response = await fetch("https://buildweek-3.herokuapp.com/post", {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
+        },
+      });
       let parsedResponse = await response.json();
       console.log(parsedResponse);
-      this.setState({ postArray: parsedResponse}, () => {
+      this.setState({ postArray: parsedResponse }, () => {
         console.log(this.state.postArray);
       });
     } catch (error) {
       console.log("uh oh stinky when fetching all the posts", error);
     }
   };
-
- 
 
   render() {
     return (
@@ -60,12 +54,9 @@ class FeedPage extends React.Component {
               }}
             />
             <Row className="d-flex justify-content-center">
-            {this.state.postArray.map(post => 
-               (<Container className = "postContainer" >
-                 123
-                 </Container> 
-               )
-            )}
+              {this.state.postArray.map((post) => (
+                <Container className="postContainer">123</Container>
+              ))}
             </Row>
           </Col>
           <Col md={3} id="feedRightColumn">

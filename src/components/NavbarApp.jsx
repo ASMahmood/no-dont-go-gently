@@ -2,7 +2,6 @@ import React from "react";
 import "./styles/Navbar.css";
 import { Container, Dropdown, Button } from "react-bootstrap";
 import { withRouter, NavLink, Link } from "react-router-dom";
-import WorkAlert from "./WorkAlert";
 import abdul from "../components/abdul.jpeg";
 
 import {
@@ -178,7 +177,6 @@ class Navbar extends React.Component {
               </Dropdown>
             </div>
             <div className="side-menu mx-4">
-              <WorkAlert />
               <div className="courses-menu text-center">
                 <GrSchedulePlay className="icon" />
                 <h5

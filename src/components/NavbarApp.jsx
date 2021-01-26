@@ -36,10 +36,10 @@ class Navbar extends React.Component {
           </div>
 
           <div className="navbar-right">
-            <NavLink to="/feed" activeClassName="active-link">
+            <NavLink to="/" activeClassName="active-link">
               <div
                 className="navbar-home mx-3 text-center"
-                onClick={() => this.props.history.push("/feed")}
+                onClick={() => this.props.history.push("/")}
               >
                 <AiFillHome className="icon" style={{ marginTop: "0.5rem" }} />
                 <h5
@@ -108,7 +108,6 @@ class Navbar extends React.Component {
               </h5>
             </div>
             <div className="navbar-profile-menu mx-3 text-center">
-              {/* <CgProfile className="icon" /> */}
               <img
                 src={this.state.user.image ? this.state.user.image : abdul}
                 alt=""
@@ -154,7 +153,7 @@ class Navbar extends React.Component {
                   <Dropdown.Item eventKey="4">
                     <Button
                       id="profileButton"
-                      onClick={() => this.props.history.push("/")}
+                      onClick={() => this.props.history.push("/me")}
                     >
                       View Profile
                     </Button>

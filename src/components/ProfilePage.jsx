@@ -1,11 +1,14 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+import RightSideColumn from "./RightSideColumn";
 
 const ProfilePage = () => {
   return (
     <>
       <Container style={{ marginTop: "4rem" }}>
-        <Row></Row>
+        <Row>
+          <RightSideColumn />
+        </Row>
         <hr />
       </Container>
     </>

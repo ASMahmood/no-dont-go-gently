@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Footer.css";
+
 import Footer from "./components/Footer";
 import NavbarApp from "./components/Navbar";
 import ProfilePage from "./components/ProfilePage";

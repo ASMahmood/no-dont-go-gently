@@ -1,4 +1,6 @@
 import React from "react";
+import PeopleRelated from "./PeopleRelated";
+import LinkedinLearning from "./LinkedinLearning";
 
 class RightSideColumn extends React.Component {
   render() {

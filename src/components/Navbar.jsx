@@ -11,9 +11,8 @@ import "./styles/Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WorkAlert from "./WorkAlert";
 import { Container, Dropdown, Button } from "react-bootstrap";
-import Search from './Search';
 
-import { withRouter, NavLink, Link} from "react-router-dom";
+import { withRouter, NavLink, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   state = {
@@ -46,34 +45,34 @@ class Navbar extends React.Component {
       <Container fluid className="main-container">
         <div className="header container-lg">
           <div className="navbar-left">
-            <Link to='/' className="Linkedin-icon">
+            <Link to="/" className="Linkedin-icon">
               <AiFillLinkedin />
             </Link>
 
-            <div className="search-input"><Search />
+            <div className="search-input">
               {/*<AiOutlineSearch />
                <input type="text" placeholder="search" />*/}
             </div>
           </div>
 
           <div className="navbar-right">
-            <NavLink to='/feed' activeClassName="active-link" >
-            <div
-              className="navbar-home mx-3 text-center"
-              onClick={() => this.props.history.push("/feed")}
-            >
-              <AiFillHome className="icon" style={{marginTop: '0.5rem'}}/>
-              <h5
-                style={{
-                  fontSize: '0.75rem',
-                  letterSpacing: 1,
-                  marginTop: 2,
-                  textDecoration: 'none'
-                }}
+            <NavLink to="/feed" activeClassName="active-link">
+              <div
+                className="navbar-home mx-3 text-center"
+                onClick={() => this.props.history.push("/feed")}
               >
-                Home
-              </h5>
-            </div>
+                <AiFillHome className="icon" style={{ marginTop: "0.5rem" }} />
+                <h5
+                  style={{
+                    fontSize: "0.75rem",
+                    letterSpacing: 1,
+                    marginTop: 2,
+                    textDecoration: "none",
+                  }}
+                >
+                  Home
+                </h5>
+              </div>
             </NavLink>
 
             <div className="navbar-network mx-3 text-center">
@@ -165,12 +164,12 @@ class Navbar extends React.Component {
                       </Dropdown.Item>
                     </>
                   ) : (
-                      <>
-                        <Dropdown.Item eventKey="1">Image</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Full Name</Dropdown.Item>
-                        <Dropdown.Item eventKey="3">Job Title</Dropdown.Item>
-                      </>
-                    )}
+                    <>
+                      <Dropdown.Item eventKey="1">Image</Dropdown.Item>
+                      <Dropdown.Item eventKey="2">Full Name</Dropdown.Item>
+                      <Dropdown.Item eventKey="3">Job Title</Dropdown.Item>
+                    </>
+                  )}
 
                   <Dropdown.Item eventKey="4">
                     <Button

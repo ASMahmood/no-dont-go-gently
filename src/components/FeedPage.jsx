@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import HomeProfile from "./HomeProfile";
 import HomeRight from "./HomeRight";
+import CreateFeed from "./CreateFeed";
 import "../styles/FeedPage.css";
 
 class FeedPage extends React.Component {

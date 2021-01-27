@@ -44,42 +44,6 @@ class ProfileLeft extends React.Component {
     }));
   }
 
-  fetchProfile = async () => {
-    try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-      let parsedResponse = await response.json();
-
-      this.setState({ user: parsedResponse, loading: false });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  fetchExperience = async () => {
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.user._id}/experiences`,
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-
-      const parsedResponse = await response.json();
-      this.setState({ experiences: parsedResponse, loading: false });
-    } catch (error) {
-      console.log("Error at experiences:", error);
-    }
-  };
-
   render() {
     return (
       <div className="col-12 col-lg-8 mt-3">

@@ -10,22 +10,7 @@ class PeopleRelated extends React.Component {
   componentDidMount = () => {
     this.fetchProfiles();
   };
-  fetchProfiles = async () => {
-    try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-      let parsedResponse = await response.json();
-      this.setState({ other: parsedResponse });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   render() {
     return (
       <Container id="relatedGroup" className="my-3">

@@ -39,62 +39,6 @@ class FormModal extends React.Component {
     this.props.fetchExperience();
   };
 
-  postExperience = async () => {
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.userId}/experiences`,
-        {
-          method: "POST",
-          body: JSON.stringify(this.state.experience),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-
-      if (response.ok) {
-        let message = await response.json();
-        this.setState({
-          role: "",
-          company: "",
-          startDate: "",
-          endDate: "",
-          description: "",
-          area: "",
-        });
-
-        this.setState({ experience: message, loading: false });
-        this.handleClose();
-        this.props.fetchExperience();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  editExperience = async () => {
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.userId}/experiences/${this.props.expId}`,
-        {
-          method: "PUT",
-          body: JSON.stringify(this.state.experience),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-      let message = await response.json();
-      if (response.ok) {
-        this.handleClose();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   handleShow = () => {
     this.setState({ show: true });
   };
@@ -112,60 +56,8 @@ class FormModal extends React.Component {
     });
   };
 
-  handleDelete = async (expId, e) => {
-    e.preventDefault();
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.userId}/experiences/${this.props.expId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          },
-        }
-      );
-      if (response.ok && this.props.expId !== expId) {
-        this.handleClose();
-        this.props.fetchExperience();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   onFileChange = (event) => {
     this.setState({ selectedFile: event.target.files[0] });
-  };
-
-  fetchExpImg = async (expID) => {
-    const formData = new FormData();
-    formData.append("experience", this.state.selectedFile);
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.userId}/experiences/${expID}/picture`,
-
-        {
-          body: formData,
-          method: "POST",
-          headers: new Headers({
-            Authorization: `Bearer ${process.env.REACT_APP_BE_URL}`,
-          }),
-        }
-      );
-      if (response.ok) {
-        const content = await response.json();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    this.setState({
-      role: "",
-      company: "",
-      startDate: "",
-      endDate: "",
-      description: "",
-      area: "",
-    });
   };
 
   render() {
